@@ -1,0 +1,20 @@
+#! /bin/bash
+
+SIMON_DIR=${PWD}
+
+rm -rf /usr/local/cami
+mkdir /usr/local/cami
+
+cd ../
+zip -r app.zip index.html package.json assets pages nw.icns
+mv app.zip /usr/local/cami/app.zip
+cd /usr/local/cami/
+
+cd ${SIMON_DIR}
+mv src/index.html index.html
+zip simon.zip index.html package.json nw.icns
+mv index.html src/index.html
+mv simon.zip ../simon.zip
+cd ..
+mv simon.zip Cami.app/Contents/Resources/app.nw
+open Cami.app
