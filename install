@@ -44,6 +44,7 @@ echo "<html>
 	</body>
 </html>" >> index.html
 cd simon
+touch build
 echo '#! /bin/bash
 
 SIMON_DIR=${PWD}
