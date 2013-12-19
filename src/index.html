@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>simon</title>
+        <script type="text/javascript">
+            var gui  = require('nw.gui');
+            var fs   = require('fs');
+            var exec = require('child_process').exec,child;
+
+            var si_install_path = '/usr/local/simon';
+            var cwd             = process.cwd();
+
+            var clear_cache = 'cd ' + cwd + ' && rm *';
+            var copy_app    = 'cd ' + cwd + ' && cp ' + si_install_path + '/app.zip app.zip';
+            var extract_app = 'cd ' + cwd + ' && unzip app.zip';
+
+            child = exec(clear_cache, function(err,out) {
+                //err or out
+            });
+
+            child = exec(copy_app , function(err,out) {
+                //err or out
+            });
+
+            child = exec(extract_app , function(err,out) {
+                var win = gui.Window.get();
+                win.reload();
+            });
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
