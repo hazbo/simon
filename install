@@ -61,3 +61,4 @@ cd ${SIMON_DIR}
 zip simon.zip src/index.html package.json nw.icns
 mv simon.zip ../'${APP_NAME}'.app/Contents/Resources/app.zip
 open ../'${APP_NAME}'.app' >> build
+chmod 0777 build
