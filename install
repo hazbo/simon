@@ -43,7 +43,8 @@ echo "<html>
 		<h1>Hello from Simon!</h1>
 	</body>
 </html>" >> index.html
-cd simon
+cd ../simon
+touch build
 echo '#! /bin/bash
 
 SIMON_DIR=${PWD}
