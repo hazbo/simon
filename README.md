@@ -17,4 +17,14 @@ will be able to pull down your latest version of the app and load it
 in straight away without having to download an instance of node-webkit
 or any other dependencies.
 
-Do not try to use this yet as it's not finished.
+### To Install
+
+	$ mkdir MyApp
+	$ cd MyApp
+	$ git clone https://github.com/hazbo/simon.git
+	$ cd simon
+	$ ./install MyApp
+
+### To Run
+
+	$ ./build
