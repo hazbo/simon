@@ -1,0 +1,62 @@
+#! /bin/bash
+
+APP_NAME=$1
+curl -O https://s3.amazonaws.com/node-webkit/v0.8.2/node-webkit-v0.8.2-osx-ia32.zip
+mv node-webkit-v0.8.2-osx-ia32.zip ../node-webkit-v0.8.2-osx-ia32.zip
+cd ..
+unzip node-webkit-v0.8.2-osx-ia32.zip
+rm node-webkit-v0.8.2-osx-ia32.zip
+mv node-webkit.app ${APP_NAME}.app
+echo '{
+  "main": "app/index.html",
+  "name": "'${APP_NAME}'",
+  "description": "",
+  "version": "0.1.0",
+  "keywords": [ "'${APP_NAME}'" ],
+  "window": {
+    "title": "'${APP_NAME}'",
+    //"icon": "link.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 800,
+    "height": 500,
+    "position": "mouse",
+    "min_width": 400,
+    "min_height": 200,
+    "max_width": 800,
+    "max_height": 600
+  },
+  "webkit": {
+    "plugin": true
+  }
+}' >> package.json
+mkdir app
+cd app
+mkdir assets
+mkdir pages
+touch index.html
+echo "<html>
+	<head>
+		<title>My Hello World App</title>
+	</head>
+	<body>
+		<h1>Hello from Simon!</h1>
+	</body>
+</html>" >> index.html
+cd simon
+echo '#! /bin/bash
+
+SIMON_DIR=${PWD}
+
+rm -rf /usr/local/simon
+mkdir /usr/local/simon
+
+cd ../
+zip -r app.zip app package.json nw.icns
+mv app.zip /usr/local/simon/app.zip
+cd /usr/local/simon/
+
+cd ${SIMON_DIR}
+zip simon.zip src/index.html package.json nw.icns
+mv simon.zip ../'${APP_NAME}'.app/Contents/Resources/app.zip
+open ../'${APP_NAME}'.app' >> build

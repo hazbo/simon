@@ -1,11 +1,11 @@
 {
   "main": "index.html",
-  "name": "cami",
-  "description": "Ground Six Cami Application",
+  "name": "simon",
+  "description": "Simon - Application Container and Auto Updater",
   "version": "0.1.0",
-  "keywords": [ "cami", "groundsix" ],
+  "keywords": [ "simon", "update" ],
   "window": {
-    "title": "Cami",
+    "title": "Installing Updates",
     //"icon": "link.png",
     "toolbar": false,
     "frame": true,
