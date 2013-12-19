@@ -7,9 +7,9 @@ Disclaimer: It's a mess as of now. It's just an experiment and is far from
 being finished.
 
 ### What Does It Do?
-Once cloned into the root of your new node-webkit app, you can run the
-`build` shell script and let Simon take what you have done and cache it
-on your local machine.
+Once cloned into the root of your new node-webkit project directory and you have ran the
+`./install` you can run the `./build` shell script and let Simon take what
+you have done and cache it on your local machine.
 
 Once your app is cached, Simon can then dynamicly load in your app and
 restart itself. This way once auto-updates have been implemented, it
