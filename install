@@ -36,12 +36,12 @@ mkdir assets
 mkdir pages
 touch index.html
 echo "<html>
-	<head>
-		<title>My Hello World App</title>
-	</head>
-	<body>
-		<h1>Hello from Simon!</h1>
-	</body>
+        <head>
+                <title>My Hello World App</title>
+        </head>
+        <body>
+                <h1>Hello from Simon!</h1>
+        </body>
 </html>" >> index.html
 cd ../simon
 touch build
