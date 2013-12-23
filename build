@@ -1,4 +1,4 @@
-'#! /bin/bash
+#! /bin/bash
 
 SIMON_DIR=${PWD}
 
@@ -12,5 +12,5 @@ cd /usr/local/simon/
 
 cd ${SIMON_DIR}
 zip simon.zip src/index.html package.json nw.icns
-mv simon.zip ../'${APP_NAME}'.app/Contents/Resources/app.zip
-open ../'${APP_NAME}'.app'
+mv simon.zip ../.app/Contents/Resources/app.zip
+open ../.app

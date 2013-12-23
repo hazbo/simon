@@ -1,6 +1,8 @@
 #! /bin/bash
 
 APP_NAME=$1
+PACKAGE_SCRIPT=$(cat scripts/package.json)
+INDEX_HTML_SCRIPT=$(cat scripts/html/index.html)
 BUILD_SCRIPT=$(cat scripts/build)
 
 curl -O https://s3.amazonaws.com/node-webkit/v0.8.2/node-webkit-v0.8.2-osx-ia32.zip
@@ -10,36 +12,14 @@ unzip node-webkit-v0.8.2-osx-ia32.zip
 rm node-webkit-v0.8.2-osx-ia32.zip
 mv node-webkit.app ${APP_NAME}.app
 
-echo BUILD_SCRIPT >> package.json
+echo PACKAGE_SCRIPT >> package.json
 mkdir app
 cd app
 mkdir assets
 mkdir pages
 touch index.html
-echo "<html>
-	<head>
-		<title>My Hello World App</title>
-	</head>
-	<body>
-		<h1>Hello from Simon!</h1>
-	</body>
-</html>" >> index.html
+echo INDEX_HTML_SCRIPT >> index.html
 cd ../simon
 touch build
-echo '#! /bin/bash
-
-SIMON_DIR=${PWD}
-
-rm -rf /usr/local/simon
-mkdir /usr/local/simon
-
-cd ../
-zip -r app.zip app package.json nw.icns
-mv app.zip /usr/local/simon/app.zip
-cd /usr/local/simon/
-
-cd ${SIMON_DIR}
-zip simon.zip src/index.html package.json nw.icns
-mv simon.zip ../'${APP_NAME}'.app/Contents/Resources/app.zip
-open ../'${APP_NAME}'.app' >> build
+echo BUILD_SCRIPT >> build
 chmod 0777 build
