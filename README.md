@@ -17,7 +17,7 @@ like so:
 	  - package.json
 
 
-[Default sample Simon app](https://raw.github.com/hazbo/simon/master/docs/si-screen.png)
+![Default sample Simon app](https://raw.github.com/hazbo/simon/master/docs/si-screen.png)
 
 All of your source code goes into `app/`. You may modify the structure
 of this how you like. Simon automaticly generates the `assets` and `pages`
