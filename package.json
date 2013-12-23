@@ -1,0 +1,23 @@
+{
+  "main": "index.html",
+  "name": "simon",
+  "description": "Simon - Application Container and Auto Updater",
+  "version": "0.1.0",
+  "keywords": [ "simon", "update" ],
+  "window": {
+    "title": "Installing Updates",
+    //"icon": "link.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 800,
+    "height": 500,
+    "position": "mouse",
+    "min_width": 400,
+    "min_height": 200,
+    "max_width": 800,
+    "max_height": 600
+  },
+  "webkit": {
+    "plugin": true
+  }
+}
