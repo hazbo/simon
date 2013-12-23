@@ -2,7 +2,7 @@
 
 Simon is a tool that allows you to quick get up and running with
 a [node-webkit](https://github.com/rogerwang/node-webkit) application.
-Currently only supported for OSX (not yet tested on Linux, could work).
+Currently only supported for OSX.
 
 It works in such a way that it is actually a container for your
 node-webkit application. The idea is that you create your app locally
