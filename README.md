@@ -68,3 +68,11 @@ out into the wild it will not work.
 
   - Create a spec for how Simon will check for the latest version of the app
   - Test being able to pull down remote applications and install them locally
+
+## Contributing
+
+  - Fork Simon
+  - Create a feature branch (`git checkout -b my-feature`)
+  - Commit your changes (`git commit -am 'Add some feature'`)
+  - Push to your feature branch (`git push origin my-feature`)
+  - Create new Pull Request
