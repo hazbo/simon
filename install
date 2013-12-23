@@ -1,6 +1,7 @@
 #! /bin/bash
 
 APP_NAME=$1
+SAMPLE_APP=$(cat scripts/app/index.html)
 curl -O https://s3.amazonaws.com/node-webkit/v0.8.2/node-webkit-v0.8.2-osx-ia32.zip
 mv node-webkit-v0.8.2-osx-ia32.zip ../node-webkit-v0.8.2-osx-ia32.zip
 cd ..
@@ -35,14 +36,7 @@ cd app
 mkdir assets
 mkdir pages
 touch index.html
-echo "<html>
-        <head>
-                <title>My Hello World App</title>
-        </head>
-        <body>
-                <h1>Hello from Simon!</h1>
-        </body>
-</html>" >> index.html
+echo ${SAMPLE_APP} >> index.html
 cd ../simon
 touch build
 echo '#! /bin/bash
