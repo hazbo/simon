@@ -68,6 +68,7 @@ out into the wild it will not work.
 
 ## Todo
 
+  - Migrate index.html JavaScript to seperate file
   - Create a spec for how Simon will check for the latest version of the app
   - Test being able to pull down remote applications and install them locally
 
