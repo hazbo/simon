@@ -2,11 +2,11 @@
 
 APP_NAME=$1
 SAMPLE_APP=$(cat scripts/app/index.html)
-curl -O https://s3.amazonaws.com/node-webkit/v0.8.2/node-webkit-v0.8.2-osx-ia32.zip
-mv node-webkit-v0.8.2-osx-ia32.zip ../node-webkit-v0.8.2-osx-ia32.zip
+curl -O https://s3.amazonaws.com/node-webkit/v0.8.3/node-webkit-v0.8.3-osx-ia32.zip
+mv node-webkit-v0.8.3-osx-ia32.zip ../node-webkit-v0.8.3-osx-ia32.zip
 cd ..
-unzip node-webkit-v0.8.2-osx-ia32.zip
-rm node-webkit-v0.8.2-osx-ia32.zip
+unzip node-webkit-v0.8.3-osx-ia32.zip
+rm node-webkit-v0.8.3-osx-ia32.zip
 mv node-webkit.app ${APP_NAME}.app
 echo '{
   "main": "app/index.html",
