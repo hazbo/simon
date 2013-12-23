@@ -12,14 +12,14 @@ unzip node-webkit-v0.8.2-osx-ia32.zip
 rm node-webkit-v0.8.2-osx-ia32.zip
 mv node-webkit.app ${APP_NAME}.app
 
-echo PACKAGE_SCRIPT >> package.json
+echo ${PACKAGE_SCRIPT} >> package.json
 mkdir app
 cd app
 mkdir assets
 mkdir pages
 touch index.html
-echo INDEX_HTML_SCRIPT >> index.html
+echo ${INDEX_HTML_SCRIPT} >> index.html
 cd ../simon
 touch build
-echo BUILD_SCRIPT >> build
+echo ${BUILD_SCRIPT} >> build
 chmod 0777 build
