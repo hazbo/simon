@@ -1,35 +1,16 @@
 #! /bin/bash
 
 APP_NAME=$1
+BUILD_SCRIPT=$(cat scripts/build)
+
 curl -O https://s3.amazonaws.com/node-webkit/v0.8.2/node-webkit-v0.8.2-osx-ia32.zip
 mv node-webkit-v0.8.2-osx-ia32.zip ../node-webkit-v0.8.2-osx-ia32.zip
 cd ..
 unzip node-webkit-v0.8.2-osx-ia32.zip
 rm node-webkit-v0.8.2-osx-ia32.zip
 mv node-webkit.app ${APP_NAME}.app
-echo '{
-  "main": "app/index.html",
-  "name": "'${APP_NAME}'",
-  "description": "",
-  "version": "0.1.0",
-  "keywords": [ "'${APP_NAME}'" ],
-  "window": {
-    "title": "'${APP_NAME}'",
-    //"icon": "link.png",
-    "toolbar": false,
-    "frame": true,
-    "width": 800,
-    "height": 500,
-    "position": "mouse",
-    "min_width": 400,
-    "min_height": 200,
-    "max_width": 800,
-    "max_height": 600
-  },
-  "webkit": {
-    "plugin": true
-  }
-}' >> package.json
+
+echo BUILD_SCRIPT >> package.json
 mkdir app
 cd app
 mkdir assets
